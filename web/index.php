@@ -11,15 +11,16 @@
 <body>
 	<?php require("components/navbar/navbar.php"); ?>
 
-	<div class="jumbotron">
-  <h1 class="display-4">Hello, Barists!</h1>
-  <p class="lead">A Barist is a barman, bartender or any bar-entusiastic that wanna manage his activity smarter than never.</p>
-  <hr class="my-4">
-  <p>Take a trip or Barist! and try our features.</p>
-  <a class="btn btn-primary btn-lg" href="about.php" role="button">Learn more</a>
-</div>
-
 	<div class="container">
+		<div class="row">
+			<div class="jumbotron">
+				<h1 class="display-4">Hello, Barists!</h1>
+				<p class="lead">A Barist is a barman, bartender or any bar-entusiastic that wanna manage his activity smarter than never.</p>
+				<hr class="my-4">
+				<p>Take a trip or Barist! and try our features.</p>
+				<a class="btn btn-primary btn-lg" href="about.php" role="button">Learn more</a>
+			</div>
+		</div>
 		<div class="row row-cols-4">
 			<div class="col-sm">
 				<?php require("components/cards/timesheet_card.php"); ?>
