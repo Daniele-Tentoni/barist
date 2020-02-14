@@ -18,8 +18,16 @@
 		</ul>
 		<ul class="navbar-nav">
 			<form class="form-inline">
-				<a class="btn btn-outline-success mr-sm-2" href="signin.php" role="button">Sign In</a>
-				<a class="btn btn-success my-2 my-sm-0" href="signup.php" role="button">Sign Up</a>
+				<?php
+				session_start();
+				if(isset($_SESSION["login_user"])) {
+					echo '<a class="btn btn-success my-2 my-sm-0" href="account.php" role="button">Account</a>
+					<a class="btn btn-outline-success mr-sm-2" href="logout.php" role="button">Logout</a>';
+				} else {
+					echo '<a class="btn btn-success my-2 my-sm-0" href="signup.php" role="button">Sign Up</a>
+					<a class="btn btn-outline-success mr-sm-2" href="signin.php" role="button">Sign In</a>';
+				}
+				?>
 			</form>
 		</ul>
 	</div>
