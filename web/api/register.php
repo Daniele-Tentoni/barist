@@ -73,7 +73,7 @@ function check_company( $company_password, $mysqli ) {
 	   return $fetch["Id"];
 	} else {
 		// Restituisco l'id negativo in caso di compagnia non trovata.
-        return -1:
+        return -1;
     }
 }
 
