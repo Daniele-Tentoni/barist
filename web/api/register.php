@@ -5,7 +5,6 @@ if ( !isset( $_POST['registrati'] ) ) {
     exit;
 } else {
     session_start();
-    echo 'Questa è una buona richiesta in post.';
     $conn = new mysqli( 'localhost', 'root', '', 'my_barist' );
     $conn->set_charset( 'utf8' );
     if ( $conn->connect_error ) {
@@ -58,32 +57,28 @@ if ( !isset( $_POST['registrati'] ) ) {
     }
 }
 
-class DBHolder {
-
-}
-
 function check_company( $company_password, $mysqli ) {
     // Usando statement sql 'prepared' non sarà possibile attuare un attacco di tipo SQL injection.
-    $query = 'SELECT Id FROM companies WHERE Pass = ? LIMIT 1';
+    $query = 'SELECT Id FROM Companies WHERE Pass = ? LIMIT 1';
     $stmt = $mysqli->prepare( $query );
     $stmt->bind_param( 's', $company_password );
-    // Esegue il bind del parametro '$company_password'.
+    // esegue il bind del parametro '$company_password'.
     $stmt->execute();
-    // Esegue la query appena creata.
+    // esegue la query appena creata.
     $result = $stmt->get_result();
     if ( $result->num_rows == 1 ) {
-        // Se la compagnia esiste.
+        // se la compagnia esiste.
         $fetch = $result->fetch_array( MYSQLI_ASSOC );
         // Restituisco l'id della compagnia.
 	   return $fetch["Id"];
 	} else {
 		// Restituisco l'id negativo in caso di compagnia non trovata.
-        return -1;
+        return -1:
     }
 }
 
 function insert_into_users( $conn, $name, $surname, $email, $passwordhash, $random_salt ) {
-    $sql = 'insert into users(Name, Surname, Email, Password, Sale) values (?, ?, ?, ?, ?)';
+    $sql = 'insert into Users(Name, Surname, Email, Password, Sale) values (?, ?, ?, ?, ?)';
     $query = $conn->prepare( $sql );
     $query->bind_param( 'sssss', $name, $surname, $email, $passwordhash, $random_salt );
     $query->execute();
@@ -96,7 +91,7 @@ function insert_into_users( $conn, $name, $surname, $email, $passwordhash, $rand
 }
 
 function insert_into_companyusers( $conn, $user_id, $company_id ) {
-    $query = $conn->prepare( 'INSERT INTO companyusers(CompanyId, UserId) VALUES (?, ?)' );
+    $query = $conn->prepare( 'INSERT INTO CompanyUsers(CompanyId, UserId) VALUES (?, ?)' );
     $query->bind_param( 'ss', $user_id, $company_id );
     $query->execute();
     return $query->get_result();

@@ -20,7 +20,7 @@
         </div>
         <div class="panel-body">
 			<!-- Form di login. Cambiare in modo che sia asincrono. -->
-          <form action="login_db.php" method="post" autocomplete="on">
+          <form action="api/login.php" method="post" autocomplete="on">
             <fieldset>
               <div class="form-group row">
                 <label for="login-email" class="col-form-label col-sm-3">

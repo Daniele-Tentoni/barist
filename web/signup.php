@@ -18,7 +18,7 @@
           <h3 class="panel-title">Registrati</h3>
         </div>
         <div class="panel-body">
-          <form method="post" action="register_db.php" autocomplete="on">
+          <form method="post" action="api/register.php" autocomplete="on">
             <fieldset>
               <div class="form-group row">
                 <label for="name" class="col-form-label col-sm-3">
