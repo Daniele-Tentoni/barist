@@ -5,6 +5,7 @@
 			<th>Hour</th>
 			<th>Employee</th>
 			<th>Mansion</th>
+			<th>Com</th>
 		</tr>
 	</thead>
 	<tfoot>
@@ -13,6 +14,7 @@
 			<th>Hour</th>
 			<th>Employee</th>
 			<th>Mansion</th>
+			<th>Com</th>
 		</tr>
 	</tfoot>
 </table>
@@ -45,6 +47,7 @@
 		} );
 
 		$('#add_ts_btn').click(function () {
+			// Add button on click listener. Send the Ajax request.
 			console.log("Submit.");
 
 			var ts = {
@@ -55,22 +58,22 @@
 				};
 
 			//Richiesta AJAX.
-				$.ajax({
-					type: "POST",
-					dataType: "json",
-					url: "api/timesheets/add_timesheet.php",
-					data: ts,
-					//In caso di successo
-					success: function(data) {
-						console.log("Success");
-						console.log(data);
-						table.ajax.reload();
-					},
-					error: function(data) {
-						console.log("Error");
-						console.log(data);
-					}
-				});
+			$.ajax({
+				type: "POST",
+				dataType: "json",
+				url: "api/timesheets/add_timesheet.php",
+				data: ts,
+				//In caso di successo
+				success: function(data) {
+					console.log("Success");
+					console.log(data);
+					table.ajax.reload();
+				},
+				error: function(data) {
+					console.log("Error");
+					console.log(data);
+				}
+			});
 		});
 	} );
 </script>

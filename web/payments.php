@@ -9,6 +9,10 @@
 </head>
 
 <body>
+	<div class="wrapper">
+		<?php require("components/navbar/sidebar.php"); ?>
+
+		<div id="content">
 	<?php require("components/navbar/navbar.php"); ?>
 
 	<div class="container">
@@ -16,6 +20,8 @@
 			<div class="col-sm">
 				<?php require("components/cards/payments_card.php"); ?>
 			</div>
+		</div>
+	</div>
 		</div>
 	</div>
 

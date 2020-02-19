@@ -8,6 +8,10 @@
 </head>
 
 <body>
+  <div class="wrapper">
+    <?php require("components/navbar/sidebar.php"); ?>
+
+    <div id="content">
 	<?php require("components/navbar/navbar.php"); ?>
 
 	<div class="container">
@@ -113,6 +117,8 @@
     </div>
   </div>
 </div>
+    </div>
+  </div>
 
 
 	<!-- Optional JavaScript -->
