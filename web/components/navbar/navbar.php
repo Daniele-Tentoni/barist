@@ -21,7 +21,7 @@
 				<?php
 				if(isset($_SESSION["login_user"])) {
 					echo '<a class="btn btn-success my-2 my-sm-0" href="account.php" role="button">Account</a>
-					<a class="btn btn-outline-success mr-sm-2" href="logout.php" role="button">Logout</a>';
+					<a class="btn btn-outline-success mr-sm-2" href="logout.php" role="button">Sign Out</a>';
 				} else {
 					echo '<a class="btn btn-success my-2 my-sm-0" href="signup.php" role="button">Sign Up</a>
 					<a class="btn btn-outline-success mr-sm-2" href="signin.php" role="button">Sign In</a>';

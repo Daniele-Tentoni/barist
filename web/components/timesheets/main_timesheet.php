@@ -21,28 +21,36 @@
 <div class="row">
 	<div class="col-sm">
 		<form class="form-inline" id="add_timesheet">
-			<label class="sr-only" for="employee_input">Employee</label>
-			<input type="text" class="form-control" id="employee_input" placeholder="Jane Doe">
-
-			<label class="sr-only" for="inlineFormInputGroupUsername2">Datetime</label>
-			<div class="input-group">
-				<div class="input-group-prepend">
-					<span class="input-group-text">Datetime</span>
+			<div class="row">
+				<div class="col-sm">
+					<label class="sr-only" for="employee_input">Employee</label>
+					<input type="text" class="form-control" id="employee_input" placeholder="Employee">
 				</div>
-				<input type="date" id="date_ts" aria-label="First name" class="form-control">
-				<input type="time" id="time_ts" aria-label="Last name" class="form-control">
+				<div class="col-sm">
+					<label class="sr-only" for="inlineFormInputGroupUsername2">Date</label>
+					<div class="input-group">
+						<div class="input-group-prepend">
+							<span class="input-group-text">Date</span>
+						</div>
+						<input type="date" id="date_ts" aria-label="Date" class="form-control">
+						<input type="time" id="time_ts" aria-label="Time" class="form-control">
+					</div>
+				</div>
+				<div class="col-sm">
+					<label class="sr-only" for="mansion_input">Mansion</label>
+					<input type="text" class="form-control" id="mansion_input" placeholder="Mansion">
+				</div>
+				<div class="col-sm">
+					<button type="button" id="add_ts_btn" class="btn btn-primary">Add</button>
+				</div>
 			</div>
-
-			<label class="sr-only" for="mansion_input">Mansion</label>
-			<input type="text" class="form-control" id="mansion_input" placeholder="Jane Doe">
-
-			<button type="button" id="add_ts_btn" class="btn btn-primary">Add</button>
 		</form>
 	</div>
 </div>
 <script type="text/javascript">
+	var table;
 	$(document).ready(function() {
-		var table = $('.display').DataTable( {
+		table = $('.display').DataTable( {
 			"ajax": "api/timesheets/get_timesheet.php"
 		} );
 
